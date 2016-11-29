@@ -1,4 +1,4 @@
-package hello;
+package restws;
 
 public class Greeting {
 

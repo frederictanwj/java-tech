@@ -26,9 +26,9 @@ configurations {
 }
 
 task genJaxb {
-    ext.sourcesDir = "${buildDir}/generated-sources/jaxb"
-    ext.classesDir = "${buildDir}/classes/jaxb"
-    ext.schema = "src/main/resources/countries.xsd"
+    ext.sourcesDir = "src/main/java"
+    ext.classesDir = "bin"
+    ext.schema = "src/main/resources/soapws/countries.xsd"
 
     outputs.dir classesDir
 

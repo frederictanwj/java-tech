@@ -1,8 +1,5 @@
 package hello;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +8,9 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
-@SpringBootApplication
+import restws.Greeting;
+
+@SpringBootApplication(scanBasePackages={"restws","soapws"})
 public class Application {
 
     public static void main(String[] args) {
@@ -27,7 +26,7 @@ public class Application {
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
 			UriComponentsBuilder u = UriComponentsBuilder.fromUriString("http://localhost:8080/greeting");
-			u.queryParam("name", "Frederic and Laurier");
+			u.queryParam("name", "Frederic_Laurier");
 			Greeting g = new RestTemplate().getForObject(
 					u.toUriString(), Greeting.class);
 			System.out.println(g);
