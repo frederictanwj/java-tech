@@ -10,7 +10,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import restws.Greeting;
 
-@SpringBootApplication(scanBasePackages={"restws","soapws"})
+@SpringBootApplication(scanBasePackages={"restws, soapws, springmvc, springsecurity"})
 public class Application {
 
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class Application {
 		return builder.build();
 	}
 
-	@Bean
+//	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
 			UriComponentsBuilder u = UriComponentsBuilder.fromUriString("http://localhost:8080/greeting");

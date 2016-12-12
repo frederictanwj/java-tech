@@ -11,7 +11,7 @@ import soapws.pojo.GetCountryResponse;
 
 @Endpoint
 public class CountryEndpoint {
-	private static final String NAMESPACE_URI = "http://sopawa/pojo";
+	private static final String NAMESPACE_URI = "http://soapws/pojo";
 
 	private CountryRepository countryRepository;
 
